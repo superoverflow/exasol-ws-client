@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Login from './components/login'
 import SqlQuery from './components/sqlQuery'
 import Container from 'react-bootstrap/Container'
 
+
 function App() {
+  const [connected, setConnected] = useState(false)
   return (
-    <Container>
-      <Login />
-      <SqlQuery />
+    <Container fluid={true}>
+      <Login connectCallback={setConnected} />
+      <hr />
+      <SqlQuery connected={connected}/>
     </Container>
   );
 }

@@ -8,31 +8,39 @@ function Login(props) {
     const [url, setUrl] = useState("ws://localhost:8664")
     const [user, setUser] = useState("sys")
     const [password, setPassword] = useState("exasol")
-
     return (
         <Row>
-            <Col md={3}>
+            <Col sm={1}>
+                <Form.Label>Url: </Form.Label>
+            </Col>
+            <Col sm={3}>
                 <Form.Control
                     type="text"
                     defaultValue={url}
                     onChange={e => setUrl(e.target.value)}
                 />
             </Col>
-            <Col md={3}>
+            <Col sm={1}>
+                <Form.Label>User: </Form.Label>
+            </Col>
+            <Col md={2}>
                 <Form.Control
                     type="text"
                     defaultValue={user}
                     onChange={e => setUser(e.target.value)}
                 />
             </Col>
-            <Col md={3}>
+            <Col sm={1}>
+                <Form.Label>Password: </Form.Label>
+            </Col>
+            <Col md={2}>
                 <Form.Control
-                    type="text"
+                    type="password"
                     defaultValue={password}
                     onChange={e => setPassword(e.target.value)}
                 />
             </Col>
-            <Col md={3}>
+            <Col md={1}>
                 <Button
                     variant="primary"
                     onClick={() => connection(url, user, password)}>
