@@ -489,12 +489,14 @@ export function connection(url, user, password) {
     }, () => { })
 };
 
-export function query(sql) {
+export function query(sql, onsucces, onerror) {
     exa.com({ 'command': 'execute', 'sqlText': sql },
         function (rep) { //onresponse
             console.log(rep)
+            onsucces(JSON.stringify(rep))
         },
         function (err) { //on error
             console.log(err)
+            onerror(err)
         });
 };
