@@ -9,7 +9,7 @@ function App() {
   const [connected, setConnected] = useState(false)
   return (
       <Container fluid={true} className="p-3">
-        <Login connectCallback={setConnected} />
+        <Login connectCallback={() => setConnected(true)} />
         <hr />
         <SqlQuery connected={connected}/>
       </Container>

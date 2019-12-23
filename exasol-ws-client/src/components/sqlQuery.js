@@ -21,13 +21,14 @@ function SqlQuery(props) {
                 </Col>
                 <Col xs={2}>
                     <Button
-                        variant="primary"
+                        variant={props.connected ? "success" : "secondary"}
                         onClick={() => query(queryText, setResultText)}
                     >
                         Run Query
                     </Button>
                 </Col>
             </Row>
+            <hr />
             <Row>
                 <Col xs={12}>
                     <Form.Control

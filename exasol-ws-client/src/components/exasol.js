@@ -483,9 +483,10 @@ const Exasol = function(url, user, pass, onconnect, onerror) {
 // ---------------------------------------------------
 let exa;
 
-export function connection(url, user, password) {
+export function connection(url, user, password, callback) {
     new Exasol(url, user, password, (conn) => {
         exa = conn
+        callback()
     }, () => { })
 };
 

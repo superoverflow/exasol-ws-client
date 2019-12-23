@@ -43,7 +43,7 @@ function Login(props) {
             <Col md={1}>
                 <Button
                     variant="primary"
-                    onClick={() => connection(url, user, password)}>
+                    onClick={() => connection(url, user, password, props.connectCallback)}>
                     Connect
                     </Button>
             </Col>
