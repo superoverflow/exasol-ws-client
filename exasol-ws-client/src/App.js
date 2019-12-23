@@ -8,11 +8,11 @@ import Container from 'react-bootstrap/Container'
 function App() {
   const [connected, setConnected] = useState(false)
   return (
-    <Container fluid={true}>
-      <Login connectCallback={setConnected} />
-      <hr />
-      <SqlQuery connected={connected}/>
-    </Container>
+      <Container fluid={true} className="p-3">
+        <Login connectCallback={setConnected} />
+        <hr />
+        <SqlQuery connected={connected}/>
+      </Container>
   );
 }
 
