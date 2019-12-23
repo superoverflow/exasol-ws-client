@@ -356,6 +356,7 @@ const Exasol = function(url, user, pass, onconnect, onerror) {
         }
     };
 
+    // https://stackoverflow.com/questions/16680631/how-do-i-encrypt-crypto-js-keys-with-jsbn
     function pkcs1pad2(s,n) {
         if(n < s.length + 11) { // TODO: fix for utf-8
             alert("Message too long for RSA");
