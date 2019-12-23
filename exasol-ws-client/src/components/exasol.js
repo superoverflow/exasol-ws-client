@@ -488,7 +488,9 @@ export function connection(url, user, password, callback) {
     new Exasol(url, user, password, (conn) => {
         exa = conn
         callback()
-    }, () => { })
+    }, (err) => {
+        console.log(err)
+    })
 };
 
 export function query(sql, onsucces, onerror) {

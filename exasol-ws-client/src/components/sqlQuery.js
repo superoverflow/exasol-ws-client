@@ -22,7 +22,7 @@ function SqlQuery(props) {
                 <Col xs={2}>
                     <Button
                         variant={props.connected ? "success" : "secondary"}
-                        onClick={() => query(queryText, setResultText)}
+                        onClick={() => query(queryText, setResultText, () => { })}
                     >
                         Run Query
                     </Button>
@@ -32,7 +32,8 @@ function SqlQuery(props) {
             <Row>
                 <Col xs={12}>
                     <Form.Control
-                        type="text"
+                        as="textarea"
+                        rows="3"
                         value={resultText}
                         readOnly
                     />
