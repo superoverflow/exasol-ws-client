@@ -497,7 +497,7 @@ export function query(sql, onsucces, onerror) {
     exa.com({ 'command': 'execute', 'sqlText': sql },
         function (rep) { //onresponse
             console.log(rep)
-            onsucces(JSON.stringify(rep))
+            onsucces(JSON.stringify(rep, null, 2))
         },
         function (err) { //on error
             console.log(err)
